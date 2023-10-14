@@ -10,7 +10,7 @@ const TodoItem = ({ todo, changeTodo, deleteTodo }) => {
 				<Check isDone={todo.isDone} />
 				<span
 					className={cn({
-						'line-through': todo.isCompleted,
+						'line-through': todo.isDone,
 					})}
 				>
 					{todo.title}
