@@ -1,7 +1,7 @@
-import React from 'react'
-import Check from './Check'
 import cn from 'classnames'
+import React from 'react'
 import { BsTrash } from 'react-icons/bs'
+import Check from './Check'
 
 const TodoItem = ({ todo, changeTodo, deleteTodo }) => {
 	return (
@@ -25,3 +25,5 @@ const TodoItem = ({ todo, changeTodo, deleteTodo }) => {
 		</div>
 	)
 }
+
+export default TodoItem

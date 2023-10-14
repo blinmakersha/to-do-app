@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CreateTodos from './create-todos/CreateTodos'
+import TodoItem from './item/TodoItem'
 
 const data = [
 	{
