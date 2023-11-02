@@ -22,15 +22,18 @@ const data = [
 
 const Home = () => {
 	const [todos, setTodos] = useState(data)
+	// использую хук useState, для мониторинга состояния тудушек в бд
+	// todos - текущее значение состояния
+	// setTodos - ф-ция, которая обновляет это состояние
 
 	const changeTodo = id => {
-		const copyTodos = [...todos]
-		const currentTodo = copyTodos.find(el => el.id === id)
-		currentTodo.isDone = !currentTodo.isDone
-		setTodos(copyTodos)
+		const copyTodos = [...todos] // разворачиваем тудушки
+		const currentTodo = copyTodos.find(el => el.id === id) // находим к какому элементу обратился человек
+		currentTodo.isDone = !currentTodo.isDone // меняем статус
+		setTodos(copyTodos) // записываем уже изменные тудушки
 	}
 
-	const deleteTodo = id => setTodos([...todos].filter(el => el.id !== id))
+	const deleteTodo = id => setTodos([...todos].filter(el => el.id !== id)) // через filter оставим только те, у которых id не совпадает с переданным
 
 	return (
 		<div className='text-white w-4/5 mx-auto'>
@@ -41,7 +44,7 @@ const Home = () => {
 					todo={el}
 					changeTodo={changeTodo}
 					deleteTodo={deleteTodo}
-				/>
+				/> // передаем пропсы чтобы далее с ними работать
 			))}
 			<CreateTodos setTodos={setTodos} />
 		</div>
